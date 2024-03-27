@@ -16,4 +16,6 @@ public class RoomService {
 
     @Autowired
     RoomRepository roomRepository;
+
+    //check occupied beds? and then set this in room model
 }
