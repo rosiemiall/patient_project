@@ -1,5 +1,6 @@
 package com.example.patient_project.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -11,9 +12,11 @@ public class Bed {
 
     @ManyToOne
     @JoinColumn(name = "room_id")
+    @JsonIgnore
     private Room room;
 
     @OneToOne //(mappedBy = "bed_id")
+    @JsonIgnore
     private Patient patient;
 
     @Column

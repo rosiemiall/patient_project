@@ -8,8 +8,8 @@
 		<version>3.0.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.bnta</groupId>
-	<artifactId>patient</artifactId>
+	<groupId>com.patient</groupId>
+	<artifactId>patient_project_server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>patient</name>
 	<description>project for Spring Boot</description>
