@@ -33,8 +33,10 @@ public class DataLoader implements ApplicationRunner {
         roomRepository.save(room1);
         Bed bed1 = new Bed(room1, false);
         Bed bed2 = new Bed(room1, false);
+        Bed bed3 = new Bed(room1, false);
         bedRepository.save(bed1);
         bedRepository.save(bed2);
+        bedRepository.save(bed3);
         Patient patient1 = new Patient("test","04/01/2024" ,"05/01/2024", bed1);
         Patient patient2 = new Patient("test2","04/01/2024" ,null, bed2);
         patientRepository.save(patient1);
@@ -42,13 +44,12 @@ public class DataLoader implements ApplicationRunner {
 
         room1.addBed(bed1);
         room1.addBed(bed2);
+        room1.addBed(bed3);
         bed1.addPatient(patient1);
         bed2.addPatient(patient2);
 
         bedRepository.save(bed1);
         bedRepository.save(bed2);
         roomRepository.save(room1);
-        patientRepository.save(patient1);
-        patientRepository.save(patient2);
     }
 }
