@@ -1,5 +1,6 @@
 package com.example.patient_project.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -21,6 +22,7 @@ public class Patient {
 
     @OneToOne
     @JoinColumn(name = "bed_id")
+    @JsonIgnoreProperties({"patient", "occupied"})
     private Bed bed;
 
     public Patient(String name, String admissionDate, String dischargeDate, Bed bed) {
