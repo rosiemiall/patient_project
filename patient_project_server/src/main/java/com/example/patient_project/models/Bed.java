@@ -43,7 +43,8 @@ public class Bed {
     public void addPatient(Patient patient){
         this.patient = patient;
         this.occupied = true;
-        this.room.numberOfOccupiedBeds +=1; //move to service?
+        this.room.numberOfOccupiedBeds +=1;
+        // need to add the bed to the patient
     }
     public void removePatient(){
         this.occupied = false;

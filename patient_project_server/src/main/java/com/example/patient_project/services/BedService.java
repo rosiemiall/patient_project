@@ -18,4 +18,8 @@ public class BedService {
     public Optional<Bed> getBedById(Long id){
         return bedRepository.findById(id);
     }
+
+    //add patient to bed (and set patients bed)
+
+    // remove patient from bed (and remove bed from patient)
 }

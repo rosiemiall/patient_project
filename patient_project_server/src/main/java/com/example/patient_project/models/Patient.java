@@ -23,11 +23,11 @@ public class Patient {
     @JoinColumn(name = "bed_id")
     private Bed bed;
 
-    public Patient(String name, String admissionDate, String dischargeDate) {
+    public Patient(String name, String admissionDate, String dischargeDate, Bed bed) {
         this.name = name;
         this.admissionDate = admissionDate;
         this.dischargeDate = dischargeDate;
-        this.bed = null; //should start without one and be set?
+        this.bed = bed; //should start without one and be set?
     }
 
     public Patient() {

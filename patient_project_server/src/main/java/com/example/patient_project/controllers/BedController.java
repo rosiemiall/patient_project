@@ -36,6 +36,7 @@ public class BedController {
     // ERROR handling
     // add patient to a bed (only if bed empty, check occupied= false)
     // needs patient DTO? as request body
+    // need to set a bed for the patient also
 
     // remove patient (only if bed occupied)
 

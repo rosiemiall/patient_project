@@ -35,8 +35,8 @@ public class DataLoader implements ApplicationRunner {
         Bed bed2 = new Bed(room1, false);
         bedRepository.save(bed1);
         bedRepository.save(bed2);
-        Patient patient1 = new Patient("test","04/01/2024" ,"05/01/2024");
-        Patient patient2 = new Patient("test2","04/01/2024" ,null);
+        Patient patient1 = new Patient("test","04/01/2024" ,"05/01/2024", bed1);
+        Patient patient2 = new Patient("test2","04/01/2024" ,null, bed2);
         patientRepository.save(patient1);
         patientRepository.save(patient2);
 
@@ -48,5 +48,7 @@ public class DataLoader implements ApplicationRunner {
         bedRepository.save(bed1);
         bedRepository.save(bed2);
         roomRepository.save(room1);
+        patientRepository.save(patient1);
+        patientRepository.save(patient2);
     }
 }
