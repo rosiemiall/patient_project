@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "beds")
 public class Bed {
@@ -23,10 +26,13 @@ public class Bed {
     @Column
     private boolean occupied;
 
+    private List<Patient> previousPatients;
+
     public Bed(Room room, boolean occupied) {
         this.room = room;
         this.patient = null;
         this.occupied = occupied;
+        this.previousPatients = new ArrayList<>();
     }
 
     public Bed() {
@@ -38,9 +44,10 @@ public class Bed {
         this.room.numberOfOccupiedBeds +=1; //move to service?
     }
     public void removePatient(){
-        this.patient = null;
         this.occupied = false;
         this.room.numberOfOccupiedBeds -=1;
+        this.previousPatients.add(this.patient);
+        this.patient = null;
     }
 
     public Long getId() {
@@ -73,5 +80,13 @@ public class Bed {
 
     public void setOccupied(boolean occupied) {
         this.occupied = occupied;
+    }
+
+    public List<Patient> getPreviousPatients() {
+        return previousPatients;
+    }
+
+    public void setPreviousPatients(List<Patient> previousPatients) {
+        this.previousPatients = previousPatients;
     }
 }
