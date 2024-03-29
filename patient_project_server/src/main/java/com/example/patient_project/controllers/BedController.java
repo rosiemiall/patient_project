@@ -37,8 +37,8 @@ public class BedController {
     // need to set a bed for the patient also
 
     // remove patient (only if bed occupied)
-    @PostMapping("/add-patient/{id}/{patientId}")
-    public void addPatientToBed(@PathVariable Long bedId,@PathVariable Long patientId){
+    @PostMapping("/{bedId}/add-patient/{patientId}")
+    public void addPatientToBed(@PathVariable Long bedId, @PathVariable Long patientId){
         //error handling
         bedService.addPatientToBed(bedId, patientId);
     }
