@@ -19,7 +19,7 @@ public class Room {
     private int numberOfBeds;
 
     @Column
-    private int numberOfOccupiedBeds;
+    public int numberOfOccupiedBeds;
 
     public Room(int numberOfBeds, int numberOfOccupiedBeds) {
         this.numberOfBeds = numberOfBeds;

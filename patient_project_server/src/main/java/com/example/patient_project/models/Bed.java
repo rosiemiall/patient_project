@@ -35,11 +35,12 @@ public class Bed {
     public void addPatient(Patient patient){
         this.patient = patient;
         this.occupied = true;
-//        this.room.numberOfOccupiedBeds +=1; service?
+        this.room.numberOfOccupiedBeds +=1; //move to service?
     }
     public void removePatient(){
         this.patient = null;
         this.occupied = false;
+        this.room.numberOfOccupiedBeds -=1;
     }
 
     public Long getId() {
