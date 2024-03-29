@@ -5,7 +5,7 @@ This project aims to provide a simple yet efficient solution for managing patien
 #### Features:
 1. **Record Keeping**: Store information about patient rooms, beds, and the patients occupying them.
 2. **Retrieve Data**: Easily fetch information about all rooms, beds, and patients via GET requests.
-3. **Add New Patient**: Utilize POST requests to create a new patient entry in the system.
+3. **Add New Patient**: Utilise POST requests to create a new patient entry in the system.
 4. **Assign Patient to Bed**: Assign a patient to a specific bed using a POST request, updating the bed's status accordingly.
 
 #### How to Use:
