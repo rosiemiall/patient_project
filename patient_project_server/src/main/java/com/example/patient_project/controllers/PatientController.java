@@ -27,4 +27,6 @@ public class PatientController {
         patientService.createPatient(patientDTO);
     }
 
+    //get all patients who are admitted ie have no discharge date or are occupying a bed 
+
 }
