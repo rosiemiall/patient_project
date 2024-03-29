@@ -26,7 +26,7 @@ public class Bed {
     @Column
     private boolean occupied;
 
-//    @OneToOne 
+//    @OneToOne
 //    @JsonIgnoreProperties({"bed"})
 //    private List<Patient> previousPatients;
 
