@@ -29,11 +29,14 @@ public class BedService {
         //error handling
         Patient addingPatient = patientRepository.findById(patientId).get();
         Bed bedAddingTo = bedRepository.findById(bedId).get();
-        bedAddingTo.addPatient(addingPatient);
-        addingPatient.setBed(bedAddingTo);
+        if( !bedAddingTo.isOccupied()) {
+            bedAddingTo.addPatient(addingPatient);
+            addingPatient.setBed(bedAddingTo);
+        } //else return an error statement?
         patientRepository.save(addingPatient);
         bedRepository.save(bedAddingTo);
     }
 
     // remove patient from bed (and remove bed from patient)
+    // if(bedAddingTo.isOccupied())
 }
