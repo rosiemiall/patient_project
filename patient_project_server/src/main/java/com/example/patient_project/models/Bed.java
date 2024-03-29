@@ -26,13 +26,15 @@ public class Bed {
     @Column
     private boolean occupied;
 
-    private List<Patient> previousPatients;
+//    @OneToOne 
+//    @JsonIgnoreProperties({"bed"})
+//    private List<Patient> previousPatients;
 
     public Bed(Room room, boolean occupied) {
         this.room = room;
         this.patient = null;
         this.occupied = occupied;
-        this.previousPatients = new ArrayList<>();
+//        this.previousPatients = new ArrayList<>();
     }
 
     public Bed() {
@@ -46,7 +48,7 @@ public class Bed {
     public void removePatient(){
         this.occupied = false;
         this.room.numberOfOccupiedBeds -=1;
-        this.previousPatients.add(this.patient);
+//        this.previousPatients.add(this.patient);
         this.patient = null;
     }
 
@@ -82,11 +84,11 @@ public class Bed {
         this.occupied = occupied;
     }
 
-    public List<Patient> getPreviousPatients() {
-        return previousPatients;
-    }
-
-    public void setPreviousPatients(List<Patient> previousPatients) {
-        this.previousPatients = previousPatients;
-    }
+//    public List<Patient> getPreviousPatients() {
+//        return previousPatients;
+//    }
+//
+//    public void setPreviousPatients(List<Patient> previousPatients) {
+//        this.previousPatients = previousPatients;
+//    }
 }
