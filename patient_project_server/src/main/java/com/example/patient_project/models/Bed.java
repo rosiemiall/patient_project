@@ -1,6 +1,7 @@
 package com.example.patient_project.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,7 +17,7 @@ public class Bed {
     private Room room;
 
     @OneToOne //(mappedBy = "bed_id")
-    @JsonIgnore
+    @JsonIgnoreProperties({"bed"})
     private Patient patient;
 
     @Column
